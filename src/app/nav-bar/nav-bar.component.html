@@ -1,0 +1,110 @@
+<div class="sticky-top">
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <a class="navbar-brand" routerLink = "/">
+      <!-- <img src=""
+      width="30" height="30" class="d-inline-block align-top" alt=""> -->
+      Bonne Humeur
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownNam"
+              role="button" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              Nam
+            </a>
+            <div class="dropdown-menu"
+              aria-labelledby="navbarDropdownNam border-0 p-0 m-0">
+
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" routerLink = "/cart"
+            id="navbarDropdownCart" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+
+            Nữ
+          </a>
+
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" routerLink = "/cart"
+            id="navbarDropdownCart" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+
+            Trẻ em
+          </a>
+
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" routerLink = "/cart" id="navbarDropdownCart" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+            Nhãn Hiệu
+          </a>
+
+        </li>
+
+        <li>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown button
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </div>
+        </li>
+
+
+
+        <!-- else user -->
+        <ng-template #anonymousUser>
+          <li class="nav-item">
+            <a routerLink = "/login" class="nav-link">
+              <img src="assets/Images/user.png" alt="" width="25" height="25" class="d-inline-block align-top">
+              Login
+            </a>
+          </li>
+        </ng-template>
+
+        <!-- get appUser, nhưng asyn pipe là nguyên nhân của infinity loop -->
+
+        <!-- <li class="nav-item dropdown" *ngIf = "appUser; else anonymousUser">
+            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownUsername" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{appUser.name}}
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownUsername">
+              <a class="dropdown-item" routerLink = "/my/orders">My Orders</a> -->
+
+              <!-- Nếu user là admin thì show 2 item này, không thì thôi -->
+              <!-- <ng-container *ngIf = "appUser.isAdmin">
+                <a class="dropdown-item" routerLink = "/admin/orders">Manage Orders</a>
+                <a class="dropdown-item" routerLink = "/admin/products">Manage Products</a>
+              </ng-container>
+
+              <a class="dropdown-item" (click) = "logout()">Log out</a>
+            </div>
+
+        </li> -->
+
+
+      </ul>
+
+    </div>
+  </nav>
+  </div>
+
