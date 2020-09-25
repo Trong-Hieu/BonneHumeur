@@ -1,0 +1,76 @@
+.dropdown:hover>.dropdown-menu {
+  display: block;
+}
+
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.navbar-collapse {
+  padding-left: 250px;
+}
+
+.nav-item {
+  padding-left: 0px;
+  margin-left: 80px;
+
+  position: relative;
+}
+
+
+.nav-link {
+  color: black;
+  font-size: 16px;
+  font-weight: 400;
+
+  position: relative;
+  top: 5px;
+}
+
+.nav-link::after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 0%;
+  background-color: black;
+
+  position: relative;
+  top: 13px;
+
+  transition: all ease-in-out 200ms;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.navbar-nav li .dropdown-menu {
+  position: absolute;
+  text-align: center;
+
+}
+
+@media all and (min-width: 992px) {
+	.navbar{ padding-top: 0; padding-bottom: 0; }
+	.navbar .has-megamenu{position:static!important;}
+	.navbar .megamenu{left:0; right:0; width:100%; padding:20px;  }
+	.navbar .nav-link{ padding-top:1rem; padding-bottom:1rem;  }
+}
+
+.list-style {
+  list-style: none;
+  text-align: left;
+}
+
+.list-style-child {
+  list-style: none;
+  text-align: center;
+}
+
+/* .appUser .dropdown-menu {
+  position: relative;
+  right: 30px;
+  top: 50px;
+} */

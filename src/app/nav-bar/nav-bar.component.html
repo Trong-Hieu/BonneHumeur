@@ -1,6 +1,6 @@
 <div class="sticky-top">
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
 
     <a class="navbar-brand" routerLink = "/">
       <!-- <img src=""
@@ -12,97 +12,274 @@
 
       <ul class="navbar-nav mr-auto">
 
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdownNam"
+        <li class="nav-item dropdown has-megamenu">
+            <a class="nav-link" id="navbarDropdownNam"
               role="button" data-toggle="dropdown" aria-haspopup="true"
               aria-expanded="false">
-              Nam
+              NAM
             </a>
-            <div class="dropdown-menu"
+            <div class="dropdown-menu megamenu"
               aria-labelledby="navbarDropdownNam border-0 p-0 m-0">
 
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="col-megamenu">
+                    <ul class="list-style">
+                      <li class="dropdown-item" href="#">Accessories</li>
+                      <li class="dropdown-item" href="#">Bags</li>
+                      <li class="dropdown-item" href="#">Coats</li>
+                    </ul>
+
+                  </div>
+
+                </div>
+
+                <div class="col-md-3">
+                  <div class="col-megamenu">
+                    <ul class="list-style">
+                      <li class="dropdown-item" href="#">Denim</li>
+                      <li class="dropdown-item" href="#">Jackets</li>
+                      <li class="dropdown-item" href="#">Lether & Casual Jackets</li>
+                    </ul>
+
+                  </div>
+
+                </div>
+
+                <div class="col-md-3">
+                  <div class="col-megamenu">
+                    <ul class="list-style">
+                      <li class="dropdown-item" href="#">Pants & Shorts</li>
+                      <li class="dropdown-item" href="#">Shirts</li>
+                      <li class="dropdown-item" href="#">Shoes</li>
+                    </ul>
+
+                  </div>
+
+                </div>
+
+                <div class="col-md-3">
+                  <div class="col-megamenu">
+                    <ul class="list-style">
+                      <li class="dropdown-item" href="#">Sweater</li>
+                      <li class="dropdown-item" href="#">T-Shirts</li>
+                      <li class="dropdown-item" href="#">Fragrances</li>
+                    </ul>
+
+                  </div>
+
+                </div>
+
+              </div>
             </div>
 
         </li>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" routerLink = "/cart"
+        <li class="nav-item dropdown has-megamenu">
+          <a class="nav-link" routerLink = "/cart"
             id="navbarDropdownCart" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
-
-            Nữ
+            NỮ
           </a>
 
-        </li>
+          <div class="dropdown-menu megamenu"
+              aria-labelledby="navbarDropdownNam border-0 p-0 m-0">
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" routerLink = "/cart"
-            id="navbarDropdownCart" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="col-megamenu">
+                    <ul class="list-style">
+                      <li class="dropdown-item" href="#">Accessories</li>
+                      <li class="dropdown-item" href="#">Bags</li>
+                      <li class="dropdown-item" href="#">Coats</li>
+                    </ul>
 
-            Trẻ em
-          </a>
+                  </div>
 
-        </li>
+                </div>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" routerLink = "/cart" id="navbarDropdownCart" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="col-md-3">
+                  <div class="col-megamenu">
+                    <ul class="list-style">
+                      <li class="dropdown-item" href="#">Denim</li>
+                      <li class="dropdown-item" href="#">Dresses</li>
+                      <li class="dropdown-item" href="#">Jackets</li>
+                    </ul>
 
-            Nhãn Hiệu
-          </a>
+                  </div>
 
-        </li>
+                </div>
 
-        <li>
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown button
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
+                <div class="col-md-3">
+                  <div class="col-megamenu">
+                    <ul class="list-style">
+                      <li class="dropdown-item" href="#">Lether & Casual Jackets</li>
+                      <li class="dropdown-item" href="#">Pants & Shorts</li>
+                      <li class="dropdown-item" href="#">Shirts</li>
+                    </ul>
+
+                  </div>
+
+                </div>
+
+                <div class="col-md-3">
+                  <div class="col-megamenu">
+                    <ul class="list-style">
+                      <li class="dropdown-item" href="#">Shoes</li>
+                      <li class="dropdown-item" href="#">Sweater</li>
+                      <li class="dropdown-item" href="#">Fragrances</li>
+                    </ul>
+
+                  </div>
+
+                </div>
+
+              </div>
+
           </div>
+
         </li>
 
+        <li class="nav-item dropdown has-megamenu">
+          <a class="nav-link" routerLink = "/cart"
+            id="navbarDropdownCart" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            TRẺ EM
+          </a>
 
+          <div class="dropdown-menu megamenu"
+              aria-labelledby="navbarDropdownNam border-0 p-0 m-0">
 
-        <!-- else user -->
-        <ng-template #anonymousUser>
-          <li class="nav-item">
-            <a routerLink = "/login" class="nav-link">
-              <img src="assets/Images/user.png" alt="" width="25" height="25" class="d-inline-block align-top">
-              Login
-            </a>
-          </li>
-        </ng-template>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="col-megamenu">
+                    <ul class="list-style-child">
+                      <li class="dropdown-item" href="#">Baby</li>
 
-        <!-- get appUser, nhưng asyn pipe là nguyên nhân của infinity loop -->
+                    </ul>
 
-        <!-- <li class="nav-item dropdown" *ngIf = "appUser; else anonymousUser">
-            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownUsername" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                {{appUser.name}}
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownUsername">
-              <a class="dropdown-item" routerLink = "/my/orders">My Orders</a> -->
+                  </div>
 
-              <!-- Nếu user là admin thì show 2 item này, không thì thôi -->
-              <!-- <ng-container *ngIf = "appUser.isAdmin">
-                <a class="dropdown-item" routerLink = "/admin/orders">Manage Orders</a>
-                <a class="dropdown-item" routerLink = "/admin/products">Manage Products</a>
-              </ng-container>
+                </div>
 
-              <a class="dropdown-item" (click) = "logout()">Log out</a>
+                <div class="col-md-4">
+                  <div class="col-megamenu">
+                    <ul class="list-style-child">
+                      <li class="dropdown-item" href="#">Boys</li>
+
+                    </ul>
+
+                  </div>
+
+                </div>
+
+                <div class="col-md-4">
+                  <div class="col-megamenu">
+                    <ul class="list-style-child">
+                      <li class="dropdown-item" href="#">Girls</li>
+
+                    </ul>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+          </div>
+
+        </li>
+
+        <li class="nav-item dropdown has-megamenu">
+          <a class="nav-link" routerLink = "/cart" id="navbarDropdownCart" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            NHÃN HIỆU
+          </a>
+
+          <div class="dropdown-menu megamenu"
+              aria-labelledby="navbarDropdownNam border-0 p-0 m-0">
+
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="col-megamenu">
+                    <ul class="list-style-brand">
+                      <li class="dropdown-item" href="#">
+                        <img src="assets/gucci-logo.png" alt="" width="50%" height="50%">
+                        <img src="assets/Gucci-look.png" alt="" width="50%" height="50%">
+                      </li>
+
+                    </ul>
+
+                  </div>
+
+                </div>
+
+                <div class="col-md-4">
+                  <div class="col-megamenu">
+                    <ul class="list-style-brand">
+                      <li class="dropdown-item" href="#">
+                        <img src="assets/chanel-logo.png" alt="" width="50%" height="50%">
+                        <img src="assets/chanel-look2.png" alt="" width="50%" height="50%">
+                      </li>
+
+                    </ul>
+
+                  </div>
+
+                </div>
+
+                <div class="col-md-4">
+                  <div class="col-megamenu">
+                    <ul class="list-style-brand">
+
+                      <li class="dropdown-item" href="#">
+                        <img src="assets/lv-logo.png" alt="" width="50%" height="50%">
+                        <img src="assets/lv-look3.png" alt="" width="50%" height="50%">
+                      </li>
+
+                    </ul>
+
+                  </div>
+
+                </div>
+
+              </div>
+
             </div>
 
-        </li> -->
+        </li>
+
 
 
       </ul>
+
+      <ng-template #anonymousUser>
+
+        <button class="btn btn-outline-dark" (click)="logIn()">LOGIN</button>
+
+      </ng-template>
+
+      <div class="appUser dropdown" *ngIf = "user; else anonymousUser">
+        <a href="#" class="dropdown" id="navbarDropdownUsername"
+          role="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false"
+          style="text-decoration:none; color: black; font-size: 16px;">
+          {{user.name}}
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownUsername">
+          <a class="dropdown-item" routerLink = "/my/orders">My Orders</a>
+
+          <!-- Nếu user là admin thì show 2 item này, không thì thôi -->
+          <ng-container *ngIf = "user.isAdmin">
+            <a class="dropdown-item" routerLink = "/admin/orders">Manage Orders</a>
+            <a class="dropdown-item" routerLink = "/admin/products">Manage Products</a>
+          </ng-container>
+
+          <a class="dropdown-item" (click) = "logOut()">Log out</a>
+        </div>
+      </div>
+
+
+
 
     </div>
   </nav>
