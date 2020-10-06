@@ -1,0 +1,35 @@
+
+<div class="container">
+  <div class="row">
+
+    <div *ngFor = "let product of filteredProducts">
+      <div class="product-Cart">
+
+        <div class="product-Cart-Img">
+
+          <a [routerLink] = "['/products', product.id]" [title] = "product.name + ' details'">
+            <img class="" src={{product.img}}
+            width="100%" height="auto" alt="Card image cap">
+          </a>
+
+        </div>
+
+          <span>{{product.name}}</span>
+          <br/>
+          <span>{{product.price | currency}}</span>
+
+          <span class="favorite" (click)="addToFavorite()">
+            <mat-icon aria-hidden="false"
+              *ngIf="isFavorite; else favourite">favorite_border</mat-icon>
+
+            <ng-template #favourite>
+              <mat-icon aria-hidden="false" >favorite</mat-icon>
+            </ng-template>
+          </span>
+
+
+      </div>
+    </div>
+
+  </div>
+</div>
