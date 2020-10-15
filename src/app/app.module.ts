@@ -21,7 +21,7 @@ import { AdminSellerComponent } from './Admin/admin-seller/admin-seller.componen
 import { AdminOrdersManageComponent } from './Admin/admin-orders-manage/admin-orders-manage.component'
 import { AdminProductsManageComponent } from './Admin/admin-products-manage/admin-products-manage.component'
 import { ProductListComponent } from './product-list/product-list.component'
-import { ProductFormComponent } from './product-form/product-form.component';
+import { ProductFormComponent } from './Admin/product-form/product-form.component';
 
 import { RouterModule } from '@angular/router';
 
@@ -32,6 +32,8 @@ import { ProductService } from './Services/product.service'
 
 import { GuardAdminAuthService } from './Services/guard-admin-auth.service'
 import { GuardAuthService } from './Services/guard-auth.service';
+import { CartComponent } from './cart/cart.component';
+import { FavoriteComponent } from './favorite/favorite.component';
 
 
 
@@ -47,6 +49,8 @@ import { GuardAuthService } from './Services/guard-auth.service';
     AdminProductsManageComponent,
     ProductListComponent,
     ProductFormComponent,
+    CartComponent,
+    FavoriteComponent,
 
   ],
   imports: [
@@ -65,6 +69,8 @@ import { GuardAuthService } from './Services/guard-auth.service';
 
       { path: 'admin/orders', component: AdminOrdersManageComponent, canActivate: [GuardAuthService, GuardAdminAuthService] },
       { path: 'admin/products', component: AdminProductsManageComponent, canActivate: [GuardAuthService, GuardAdminAuthService] },
+      { path: 'admin/products/new', component: ProductFormComponent, canActivate: [GuardAuthService, GuardAdminAuthService] },
+      { path: 'admin/products/:id', component: ProductFormComponent, canActivate: [GuardAuthService, GuardAdminAuthService] },
 
     ])
   ],

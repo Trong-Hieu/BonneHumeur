@@ -1,4 +1,5 @@
 export class productModel {
+  // [x: string]: any
   id: String
   name: String
   brand: String

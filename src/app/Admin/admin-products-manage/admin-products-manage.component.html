@@ -38,6 +38,10 @@
         <td>
           <input type="text" value="{{ product.price }}" disabled>
         </td>
+        <td>
+          <button class="btn btn-outline-dark"
+          [routerLink] = "['/admin/products/', product.id ]">Edit</button>
+        </td>
       </tr>
 
     </tbody>

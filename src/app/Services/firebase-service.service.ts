@@ -21,6 +21,7 @@ export class FirebaseServiceService {
     return this.firestore.collection('Items').add(item)
   }
 
+
   deleteItem(itemId: string){
     this.firestore.collection("Items").doc(itemId).delete()
   }

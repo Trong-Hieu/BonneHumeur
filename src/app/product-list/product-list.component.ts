@@ -12,7 +12,7 @@ import { ProductService } from '../Services/product.service';
 export class ProductListComponent implements OnInit {
 
   products: productModel[] = []
-  isFavorite = true
+  isFavorite: Boolean[] = []
   category
   subcategory
   filteredProducts: productModel[] = []
@@ -65,7 +65,10 @@ export class ProductListComponent implements OnInit {
 
       });
 
-
+      for (let p of this.filteredProducts){
+        console.log("index:" + this.filteredProducts.indexOf(p))
+        this.isFavorite.push(true)
+      }
 
       })
 
@@ -76,12 +79,11 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit(): void {
 
-
   }
 
-  addToFavorite() {
-    this.isFavorite = !this.isFavorite
-    console.log(this.isFavorite)
+  addToFavorite(i) {
+    this.isFavorite[i] = !this.isFavorite[i]
+    console.log(this.isFavorite[i])
   }
 
 }

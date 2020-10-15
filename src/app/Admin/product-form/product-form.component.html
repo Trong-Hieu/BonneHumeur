@@ -1,1 +1,125 @@
-<p>product-form works!</p>
+
+<div class="container" style="margin-top: 25px;">
+  <div class="row">
+    <div class="col-md-6">
+
+      <form #f = "ngForm" (ngSubmit) = "save(f.value)">
+        <div class="form-group">
+          <input #name="ngModel" [(ngModel)]="product.name" type="text" name="name"
+          id="name" class="form-control" required
+          placeholder="Product Name">
+          <div class="alert alert-danger" *ngIf="name.touched && name.invalid">
+            Product Name is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <select #brand="ngModel" [(ngModel)]="product.brand" id="brand" name="brand"
+          class="form-control" (change) = "brandSelect($event)"
+          >
+            <option selected disabled>Brand</option>
+            <option value="gucci">Gucci</option>
+            <option value="chanel">Chanel</option>
+            <option value="lv">Louis Vuitton</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <select #category="ngModel" [(ngModel)]="product.category" id="category" name="category"
+          class="form-control">
+            <option selected disabled>Category</option>
+            <option #cMen value="men">Men</option>
+            <option #cWomen value="women">Women</option>
+            <option #cChildren value="children">Children</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <select #subcategory="ngModel" [(ngModel)]="product.subcategory" id="subcategory" name="subcategory"
+          class="form-control">
+            <option selected disabled>Subcategory</option>
+            <option #scAccessory value="accessory">Accessory</option>
+            <option #scBag value="bag">Bag</option>
+            <option #scBelt value="belt">Belt</option>
+            <option #scCoat value="coat">Coat</option>
+            <option #scDenim value="denim">Denim</option>
+            <option #scDress value="dress">Dress</option>
+            <option #scFragrance value="fragrance">Fragrance</option>
+            <option #scGlass value="glass">Glass</option>
+            <option #scHeadwear value="headwear">Headwear</option>
+            <option #scJacket value="jacket">Jacket</option>
+            <option #scLeather&Casualjacket value="leather & casual jacket">Leather & Casual jacket</option>
+            <option #scPaint&Short value="paint & short">Paint & Short</option>
+            <option #scShirt value="shirt">Shirt</option>
+            <option #scShoe value="shoe">Shoe</option>
+            <option #scSkirt value="skrit">Skirt</option>
+            <option #scSweater&Cadigan value="sweater & cardigan">Sweater & Cardigan</option>
+            <option #scTshirt value="t-shirt">T-shirt</option>
+            <option #scWatch value="watch">Watch</option>
+
+          </select>
+        </div>
+
+        <div class="form-group">
+          <input #price="ngModel" [(ngModel)]="product.price" type="number" name="price"
+          id="price" class="form-control" required
+          placeholder="Price">
+          <div class="alert alert-danger" *ngIf="price.touched && price.invalid">
+            Price is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input #amount="ngModel" [(ngModel)]="product.amount" type="number" name="amount"
+          id="amount" class="form-control" required
+          placeholder="Amount">
+          <div class="alert alert-danger" *ngIf="amount.touched && amount.invalid">
+            Amount is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input #img="ngModel" ngModel type="file" name="img"
+          id="img" required
+          (change) = "onFileSelected($event)">
+          <div class="alert alert-danger" *ngIf="img.touched && img.invalid">
+            Image is required.
+          </div>
+        </div>
+
+        <mat-progress-bar max="100" mode="determinate"
+        [value]="uploadProgress"></mat-progress-bar>
+
+        <br>
+
+        <div class="form-group">
+          <textarea #description="ngModel" [(ngModel)]="product.description"
+          type="text" name="description" rows="5"
+          id="description" class="form-control" required
+          placeholder="Description"></textarea>
+          <div class="alert alert-danger" *ngIf="description.touched && description.invalid">
+            Description is required.
+          </div>
+        </div>
+
+        <button class="btn btn-outline-primary">Save Product</button>
+      </form>
+      <button *ngIf="id" class="btn btn-outline-danger ml-1" (click)="delete()">
+        Delete Product</button>
+
+    </div>
+
+    <div class="col-md-6">
+      <div *ngIf="product" class="card" style="width: 25rem;">
+        <img src={{product.img}} class="card-img-top" >
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text">{{ product.price | currency }}</p>
+          <p class="card-text">{{ product.description }}</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

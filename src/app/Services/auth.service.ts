@@ -19,7 +19,7 @@ export class AuthService {
   // phải đợi server phản hồi thì trong khoảng thời gian đợi có thể thực hiện những
   // công việc khác
 
-  // &: scope binding part between HTML and js
+  // $: scope binding part between HTML and js
   // In the view, you do not use the prefix $scope,
   // you just refer to a property name, like {{username}}.
   user$: Observable<firebase.User>

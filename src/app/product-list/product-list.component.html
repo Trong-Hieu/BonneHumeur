@@ -18,9 +18,9 @@
           <br/>
           <span>{{product.price | currency}}</span>
 
-          <span class="favorite" (click)="addToFavorite()">
+          <span class="favorite" (click)="addToFavorite(this.filteredProducts.indexOf(product))">
             <mat-icon aria-hidden="false"
-              *ngIf="isFavorite; else favourite">favorite_border</mat-icon>
+              *ngIf="isFavorite[this.filteredProducts.indexOf(product)]; else favourite">favorite_border</mat-icon>
 
             <ng-template #favourite>
               <mat-icon aria-hidden="false" >favorite</mat-icon>
