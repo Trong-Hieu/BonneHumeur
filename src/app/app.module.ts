@@ -22,6 +22,9 @@ import { AdminOrdersManageComponent } from './Admin/admin-orders-manage/admin-or
 import { AdminProductsManageComponent } from './Admin/admin-products-manage/admin-products-manage.component'
 import { ProductListComponent } from './product-list/product-list.component'
 import { ProductFormComponent } from './Admin/product-form/product-form.component';
+import { CartComponent } from './cart/cart.component';
+import { FavoriteComponent } from './favorite/favorite.component';
+import { CheckOutComponent } from './check-out/check-out.component';
 
 import { RouterModule } from '@angular/router';
 
@@ -29,11 +32,16 @@ import { FirebaseServiceService } from './Services/firebase-service.service';
 import { UserService } from './Services/user.service'
 import { AuthService } from './Services/auth.service';
 import { ProductService } from './Services/product.service'
+import { CartService } from './Services/cart.service'
+import { FavoriteService } from './Services/favorite.service'
+
 
 import { GuardAdminAuthService } from './Services/guard-admin-auth.service'
 import { GuardAuthService } from './Services/guard-auth.service';
-import { CartComponent } from './cart/cart.component';
-import { FavoriteComponent } from './favorite/favorite.component';
+
+
+
+
 
 
 
@@ -51,6 +59,7 @@ import { FavoriteComponent } from './favorite/favorite.component';
     ProductFormComponent,
     CartComponent,
     FavoriteComponent,
+    CheckOutComponent,
 
   ],
   imports: [
@@ -65,7 +74,9 @@ import { FavoriteComponent } from './favorite/favorite.component';
     RouterModule.forRoot([
       { path: '', component: MainPageComponent },
       { path: 'products/:category/:subcategory', component: ProductListComponent },
-
+      { path: 'cart', component: CartComponent },
+      { path: 'favorite', component: FavoriteComponent },
+      { path: 'check-out', component: CheckOutComponent},
 
       { path: 'admin/orders', component: AdminOrdersManageComponent, canActivate: [GuardAuthService, GuardAdminAuthService] },
       { path: 'admin/products', component: AdminProductsManageComponent, canActivate: [GuardAuthService, GuardAdminAuthService] },
@@ -81,6 +92,8 @@ import { FavoriteComponent } from './favorite/favorite.component';
     GuardAdminAuthService,
     GuardAuthService,
     ProductService,
+    CartService,
+    FavoriteService,
   ],
   bootstrap: [AppComponent]
 })

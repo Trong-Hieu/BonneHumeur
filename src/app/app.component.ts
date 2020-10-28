@@ -20,7 +20,7 @@ export class AppComponent {
   ){
     auth.user$.subscribe(currentUser => {
       if (currentUser) {
-
+        console.log("user Id: " + currentUser.uid)
         this.firestore.collection("Users").doc(currentUser.uid).get()
           .subscribe(user => {
             if (!user.exists) userService.save(currentUser);

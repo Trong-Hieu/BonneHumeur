@@ -1,0 +1,17 @@
+
+td {
+  vertical-align: top;
+}
+.fname{
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+td p {
+  font-weight: normal;
+  font-size: 17px;
+  margin-top: 10px;
+  text-transform: none;
+}
+

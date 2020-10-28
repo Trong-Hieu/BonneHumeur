@@ -76,7 +76,7 @@
         </li>
 
         <li class="nav-item dropdown has-megamenu">
-          <a class="nav-link" routerLink = "/cart"
+          <a class="nav-link" routerLink = "/"
             id="navbarDropdownCart" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             NỮ
@@ -141,7 +141,7 @@
         </li>
 
         <li class="nav-item dropdown has-megamenu">
-          <a class="nav-link" routerLink = "/cart"
+          <a class="nav-link" routerLink = "/"
             id="navbarDropdownCart" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             TRẺ EM
@@ -191,7 +191,7 @@
         </li>
 
         <li class="nav-item dropdown has-megamenu">
-          <a class="nav-link" routerLink = "/cart" id="navbarDropdownCart" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link" routerLink = "/" id="navbarDropdownCart" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             NHÃN HIỆU
           </a>
 
@@ -252,12 +252,20 @@
 
       </ul>
 
-      <span class="favorite" style="margin-right: 20px;">
+      <a class="favorite" style="margin-right: 20px;"
+        routerLink = "/favorite">
           <mat-icon aria-hidden="false" >favorite_border</mat-icon>
-      </span>
-      <span class="cart" style="margin-right: 20px;">
+          <span class="badge badge-dark badge-pill" *ngIf="favoriteCount != 0">
+            {{ favoriteCount }}
+          </span>
+      </a>
+      <a class="cart" style="margin-right: 20px;"
+        routerLink = "/cart">
         <mat-icon aria-hidden="false" >shopping_bag</mat-icon>
-      </span>
+        <span class="badge badge-dark badge-pill" *ngIf="favoriteCount != 0">
+          {{ cartItemsCount }}
+        </span>
+      </a>
 
       <ng-template #anonymousUser>
 

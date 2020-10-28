@@ -1,1 +1,66 @@
-<p>cart works!</p>
+<div class="container">
+
+
+  <h1>Shopping Cart</h1>
+
+  <!-- inside ng-cotainer we have other elements that need access to the shopping card object -->
+  <div *ngIf="cart">
+      <p>
+        You have {{ cart.length }} items in your shopping cart.
+      </p>
+
+  <table *ngIf="cart" class="table" style="width: 100%;">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Product</th>
+        <th class="text-center" style="width: 230px">Quantity</th>
+        <th class="text-right" style="width: 200px">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of cart">
+          <td>
+            <img [src]="item.product.img" width="100" height="auto">
+          </td>
+          <td> {{ item.product.name }}</td>
+          <td>
+              <div class="row no-gutters flex-center-align">
+                  <div class="col-2">
+                    <button (click)="removeFromCart(item.product)" class="btn btn-outline-dark btn-block">-</button>
+                  </div>
+                  <div class="col sm-setup">
+                    <div class="text-center">
+                      {{ item.quantity }} In Cart
+                    </div>
+                  </div>
+                  <div class="col-2">
+                    <button (click)="addToCart(item.product)" class="btn btn-outline-dark btn-block">+</button>
+                  </div>
+                </div>
+          </td>
+          <td class="text-right"> {{ item.totalPrice | currency }} </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th class="text-right">Total: {{ cartTotal | currency }}</th>
+        </tr>
+      </tfoot>
+  </table>
+
+  <div>
+  <button *ngIf="cart.length" class="btn btn-outline-primary "
+    routerLink = "/check-out"
+    style="float: right;">
+    Check Out
+  </button>
+
+  </div>
+
+</div>
+
+</div>

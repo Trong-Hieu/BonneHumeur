@@ -1,12 +1,13 @@
 export class productModel {
   // [x: string]: any
-  id: String
+  id: string
   name: String
   brand: String
   category: String
   subcategory: String
-  price: Number
+  price: number
   img: String
   description: String
-  amount: Number
+  amount: number
+
 }
