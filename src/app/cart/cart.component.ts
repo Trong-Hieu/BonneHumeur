@@ -11,7 +11,7 @@ import { CartService } from '../Services/cart.service';
 })
 export class CartComponent implements OnInit {
 
-  cart$
+
   cart: shoppingCartItem[] = []
   cartTotal
 
@@ -52,6 +52,10 @@ export class CartComponent implements OnInit {
 
   removeFromCart(product: productModel){
     this.cartService.removeFromCart(product)
+  }
+
+  clearCart(){
+    this.cartService.clearCart()
   }
 
 

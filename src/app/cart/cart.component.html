@@ -58,6 +58,10 @@
     style="float: right;">
     Check Out
   </button>
+  <button *ngIf="cart.length" class="btn btn-outline-danger "
+    style="float: right;" (click) = "clearCart()">
+    Clear Cart
+  </button>
 
   </div>
 

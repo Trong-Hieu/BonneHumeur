@@ -34,16 +34,12 @@ import { AuthService } from './Services/auth.service';
 import { ProductService } from './Services/product.service'
 import { CartService } from './Services/cart.service'
 import { FavoriteService } from './Services/favorite.service'
+import { OrderService} from './Services/order.service'
 
 
 import { GuardAdminAuthService } from './Services/guard-admin-auth.service'
 import { GuardAuthService } from './Services/guard-auth.service';
-
-
-
-
-
-
+import { MyOrderComponent } from './my-order/my-order.component';
 
 
 @NgModule({
@@ -60,6 +56,8 @@ import { GuardAuthService } from './Services/guard-auth.service';
     CartComponent,
     FavoriteComponent,
     CheckOutComponent,
+    MyOrderComponent,
+
 
   ],
   imports: [
@@ -77,6 +75,7 @@ import { GuardAuthService } from './Services/guard-auth.service';
       { path: 'cart', component: CartComponent },
       { path: 'favorite', component: FavoriteComponent },
       { path: 'check-out', component: CheckOutComponent},
+      { path: 'my/orders', component: MyOrderComponent},
 
       { path: 'admin/orders', component: AdminOrdersManageComponent, canActivate: [GuardAuthService, GuardAdminAuthService] },
       { path: 'admin/products', component: AdminProductsManageComponent, canActivate: [GuardAuthService, GuardAdminAuthService] },
@@ -94,6 +93,7 @@ import { GuardAuthService } from './Services/guard-auth.service';
     ProductService,
     CartService,
     FavoriteService,
+    OrderService,
   ],
   bootstrap: [AppComponent]
 })

@@ -1,1 +1,125 @@
-<p>check-out works!</p>
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md-8">
+      <h1>ĐỊA CHỈ GIAO HÀNG</h1>
+
+
+      <form #f = "ngForm" (ngSubmit) = addToOrder(f.value)>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <input #firstName = "ngModel" ngModel type="text" class="form-control"
+              name="firstName" id="firstName" placeholder="Tên" required>
+              <div class="alert alert-danger" *ngIf="firstName.touched && firstName.invalid">
+                First Name is required.
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group" >
+              <input #lastName = "ngModel" ngModel type="text" class="form-control"
+              name="lastName" id="lastName" placeholder="Họ" required>
+              <div class="alert alert-danger" *ngIf="lastName.touched && lastName.invalid">
+                Last Name is required.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="form-group" style="margin-top: 15px;">
+          <input #address="ngModel" ngModel type="text" class="form-control"
+          name="address" id="address" placeholder="Địa chỉ" required>
+          <div class="alert alert-danger" *ngIf="address.touched && address.invalid">
+            Address is required.
+          </div>
+
+        </div>
+
+        <div class="form-group" style="margin-top: 30px;">
+          <input #phoneNumber="ngModel" ngModel type="text" class="form-control"
+          name="phoneNumber" id="phoneNumber" placeholder="Số điện thoại" required>
+          <div class="alert alert-danger" *ngIf="phoneNumber.touched && phoneNumber.invalid">
+            Phone Number is required.
+          </div>
+
+        </div>
+
+        <div class="form-group" style="margin-top: 30px;">
+          <input #email="ngModel" ngModel type="text" class="form-control"
+          name="email" id="email" placeholder="Email" required>
+          <div class="alert alert-danger" *ngIf="email.touched && email.invalid">
+            Email is required.
+          </div>
+
+        </div>
+
+        <hr style="border: 1px solid black; margin-top: 20px;">
+
+        <h1>PHƯƠNG THỨC GIAO HÀNG</h1>
+        <div class="row">
+          <div class="col-md-6">
+            <h3>GIAO HÀNG TIÊU CHUẨN</h3>
+          </div>
+          <div class="col-md-6">
+            <h3 style="float: right;">Miễn phí</h3>
+          </div>
+
+        </div>
+
+        <button class="btn btn-outline-dark">THANH TOÁN</button>
+
+
+
+      </form>
+
+    </div>
+
+    <div class="col-md-4">
+      <div id="order-border">
+        <h1 style="text-align: center; padding-top: 13px;">TÓM TẮT ĐƠN HÀNG</h1>
+        <div id="order">
+          <div>
+            <p style="margin-left: 20px; font-size: 18px; padding-top: 13px;">
+               {{ cart.length }} Sản phẩm</p>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-6">
+              <p style="margin-left: 20px; font-size: 18px;">
+                <b>Tổng</b></p>
+            </div>
+            <div class="col-md-6">
+              <b style="float: right; font-size: 18px; margin-right: 10px;">
+                {{ cartTotal | currency }} </b>
+            </div>
+          </div>
+
+          <table *ngIf="cart" class="table" style="width: 100%;">
+
+            <tbody>
+                <tr *ngFor="let item of cart">
+                  <td>
+                    <img [src]="item.product.img" width="50" height="auto">
+                  </td>
+                  <td>
+                    {{ item.product.name }}
+                    <br/>Brand: {{ item.product.brand }}
+                    <br/>{{ item.product.subcategory }}
+                    <br/>{{ item.quantity }} x {{ item.product.price | currency }}
+                  </td>
+
+                </tr>
+
+              </tbody>
+          </table>
+
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

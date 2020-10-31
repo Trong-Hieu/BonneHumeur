@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
 import { map, take } from 'rxjs/operators';
 import { productModel } from '../Model/productModel';
-import { shoppingCart } from '../Model/shopping-cart';
+import { shoppingCartItem } from '../Model/shopping-cart-item';
 import { AuthService } from './auth.service';
 @Injectable({
   providedIn: 'root'
@@ -34,6 +33,7 @@ export class CartService {
       item$.valueChanges().pipe(take(1)).subscribe((item: any) =>{
         if (item) item$.update({quantity: item.quantity + 1})
         else item$.set({product: product, quantity: 1})
+
       })
    }
 
@@ -48,6 +48,38 @@ export class CartService {
         }
       })
    }
+
+   getCart(){
+    return this.firestore.collection("shopping-carts").doc(this.cartId)
+      .collection("items").snapshotChanges()
+  }
+    clearCart(){
+      let cart = []
+      this.firestore.collection("shopping-carts").doc(this.cartId)
+      .collection("items").snapshotChanges().subscribe(data =>{
+        cart = data.map(e =>{
+          return {
+            id: e.payload.doc.id,
+            product: e.payload.doc.get("product"),
+            quantity: e.payload.doc.get("quantity"),
+            totalPrice: e.payload.doc.get("quantity") * e.payload.doc.get("product.price")
+
+          } as shoppingCartItem
+        })
+        for (let item of cart){
+          this.firestore.collection("shopping-carts").doc(this.cartId)
+            .collection("items").doc(item.id).delete()
+        }
+
+      })
+
+
+        // .then(function() {
+        //   alert("Cart successfully deleted!");
+        // }).catch(function(error) {
+        //   console.error("Error removing Cart: ", error);
+        // });
+    }
 
 
 
@@ -72,10 +104,6 @@ export class CartService {
 
   //  }
 
-  getCart(){
-    return this.firestore.collection("shopping-carts").doc(this.cartId)
-      .collection("items").snapshotChanges()
-  }
 
 
 }

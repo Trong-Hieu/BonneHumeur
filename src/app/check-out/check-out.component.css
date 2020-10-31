@@ -1,0 +1,11 @@
+#order-border{
+  background-color: rgb(238, 238, 238);
+  min-width: 100%;
+  padding-bottom: 10px;
+}
+#order{
+  width: 95%;
+  background-color: white;
+  margin: 0 auto;
+  display: block;
+}
