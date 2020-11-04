@@ -54,6 +54,10 @@ export class OrderService {
           this.firestore.collection("Users").doc(this.cartId).collection("My_order")
             .doc(orderId).collection("items")
             .doc(item.id).set({product: item.product, quantity: item.quantity})
+
+          // update amount of product
+          this.firestore.collection("products").doc(item.id)
+            .update({amount: item.product.amount - item.quantity})
         }
 
         // add order information
@@ -68,8 +72,6 @@ export class OrderService {
         this.firestore.collection("Users").doc(this.cartId).collection("My_order")
           .doc(orderId).set({status: "unship", orderDate: orderDate})
 
-        // clear Cart
-        // this.cartService.clearCart()
 
 
       })
@@ -87,8 +89,12 @@ export class OrderService {
 
    shipOder(orderId){
      this.firestore.collection("orders").doc(orderId).update({status: "shipped"})
+     this.firestore.collection("Users").doc(this.cartId).collection("My_order")
+          .doc(orderId).update({status: "shipped"})
    }
    cancelOder(orderId){
     this.firestore.collection("orders").doc(orderId).update({status: "canceled"})
+    this.firestore.collection("Users").doc(this.cartId).collection("My_order")
+          .doc(orderId).update({status: "canceled"})
   }
 }

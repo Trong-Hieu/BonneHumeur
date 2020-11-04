@@ -10,6 +10,7 @@ import { ProductService } from 'src/app/Services/product.service';
 export class AdminProductsManageComponent implements OnInit {
 
   products: productModel[] = []
+  filteredProducts: productModel[] = []
 
   constructor(
     private productService: ProductService
@@ -17,7 +18,7 @@ export class AdminProductsManageComponent implements OnInit {
 
   ngOnInit(): void {
     this.productService.getProduct().subscribe(data => {
-      this.products = data.map(e => {
+      this.filteredProducts = data.map(e => {
         return {
           id: e.payload.doc.id,
           name: e.payload.doc.get("name"),
@@ -30,7 +31,15 @@ export class AdminProductsManageComponent implements OnInit {
           amount: e.payload.doc.get("amount")
         } as productModel
       })
+
+      this.products = this.filteredProducts
     })
+  }
+
+  filter(query: string){
+    console.log(query);
+    this.filteredProducts = (query) ?
+      this.products.filter(p => p.name.toLowerCase().includes(query.toLowerCase())) : this.products;
   }
 
 }

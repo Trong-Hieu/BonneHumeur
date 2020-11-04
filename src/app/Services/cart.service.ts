@@ -53,23 +53,24 @@ export class CartService {
     return this.firestore.collection("shopping-carts").doc(this.cartId)
       .collection("items").snapshotChanges()
     }
-    clearCart(){
-      let cart = []
-      this.firestore.collection("shopping-carts").doc(this.cartId)
-      .collection("items").snapshotChanges().subscribe(data =>{
-        cart = data.map(e =>{
-          return {
-            id: e.payload.doc.id,
-            product: e.payload.doc.get("product"),
-            quantity: e.payload.doc.get("quantity"),
-            totalPrice: e.payload.doc.get("quantity") * e.payload.doc.get("product.price")
 
-          } as shoppingCartItem
-        })
-        for (let item of cart){
-          this.firestore.collection("shopping-carts").doc(this.cartId)
-            .collection("items").doc(item.id).delete()
-        }
+   clearCart(){
+     let cart = []
+     this.firestore.collection("shopping-carts").doc(this.cartId)
+        .collection("items").snapshotChanges().subscribe(data =>{
+          cart = data.map(e =>{
+            return {
+              id: e.payload.doc.id,
+              product: e.payload.doc.get("product"),
+              quantity: e.payload.doc.get("quantity"),
+              totalPrice: e.payload.doc.get("quantity") * e.payload.doc.get("product.price")
+
+            } as shoppingCartItem
+          })
+          for (let item of cart){
+            this.firestore.collection("shopping-carts").doc(this.cartId)
+              .collection("items").doc(item.id).delete()
+          }
 
       })
 
@@ -81,28 +82,6 @@ export class CartService {
         // });
     }
 
-
-
-  //  async getCart(): Promise<Observable<shoppingCart>>{
-
-  //   // await this.getCartId()
-
-  //   return this.firestore.collection("shopping-carts").doc(this.cartId)
-  //     .valueChanges().pipe(map(x => new shoppingCart(x['items'])))
-  //  }
-
-  //  private async getCartId(){
-  //    this.auth.user$.subscribe(currentUser => {
-  //     if (currentUser){
-  //       this.cartId = currentUser.uid
-  //     }
-  //     else this.cartId = this.firestore.createId()
-
-  //     console.log("cartId: " + this.cartId)
-  //    })
-  //    console.log("cartId: " + this.cartId)
-
-  //  }
 
 
 

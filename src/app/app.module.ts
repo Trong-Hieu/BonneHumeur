@@ -25,6 +25,8 @@ import { ProductFormComponent } from './Admin/product-form/product-form.componen
 import { CartComponent } from './cart/cart.component';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { CheckOutComponent } from './check-out/check-out.component';
+import { MyOrderComponent } from './my-order/my-order.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 import { RouterModule } from '@angular/router';
 
@@ -38,8 +40,7 @@ import { OrderService} from './Services/order.service'
 
 
 import { GuardAdminAuthService } from './Services/guard-admin-auth.service'
-import { GuardAuthService } from './Services/guard-auth.service';
-import { MyOrderComponent } from './my-order/my-order.component';
+import { GuardAuthService } from './Services/guard-auth.service'
 
 
 @NgModule({
@@ -57,6 +58,7 @@ import { MyOrderComponent } from './my-order/my-order.component';
     FavoriteComponent,
     CheckOutComponent,
     MyOrderComponent,
+    ProductDetailComponent,
 
 
   ],
@@ -76,6 +78,7 @@ import { MyOrderComponent } from './my-order/my-order.component';
       { path: 'favorite', component: FavoriteComponent },
       { path: 'check-out', component: CheckOutComponent},
       { path: 'my/orders', component: MyOrderComponent},
+      { path: 'product/:id', component: ProductDetailComponent },
 
       { path: 'admin/orders', component: AdminOrdersManageComponent, canActivate: [GuardAuthService, GuardAdminAuthService] },
       { path: 'admin/products', component: AdminProductsManageComponent, canActivate: [GuardAuthService, GuardAdminAuthService] },

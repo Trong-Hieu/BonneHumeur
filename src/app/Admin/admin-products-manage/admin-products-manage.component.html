@@ -5,7 +5,7 @@
     <div class="col-md-6">
       <h1><b>Manage Products</b></h1>
       <p>
-        <input #query type="text"
+        <input #query (keyup)="filter(query.value)" type="text"
         class="form-control" placeholder="Search">
       </p>
     </div>
@@ -24,7 +24,7 @@
         <th scope="col">Price</th>
     </thead>
     <tbody>
-      <tr *ngFor = "let product of products">
+      <tr *ngFor = "let product of filteredProducts">
         <td>
           <img src="{{ product.img }}" width="50" height="auto">
         </td>
