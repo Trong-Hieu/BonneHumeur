@@ -76,4 +76,19 @@ export class OrderService {
 
 
    }
+
+   getMyOrder(){
+     return this.firestore.collection("Users").doc(this.cartId).collection("My_order")
+   }
+
+   getAllOrder(){
+     return this.firestore.collection("orders")
+   }
+
+   shipOder(orderId){
+     this.firestore.collection("orders").doc(orderId).update({status: "shipped"})
+   }
+   cancelOder(orderId){
+    this.firestore.collection("orders").doc(orderId).update({status: "canceled"})
+  }
 }

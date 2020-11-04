@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { productModel } from '../Model/productModel';
+import { AuthService } from '../Services/auth.service';
 import { CartService } from '../Services/cart.service';
 import { FavoriteService } from '../Services/favorite.service';
 import { ProductService } from '../Services/product.service';
@@ -16,7 +17,7 @@ export class FavoriteComponent implements OnInit {
   constructor(
     private favoriteService: FavoriteService,
     private productService: ProductService,
-    private cartService: CartService
+    private cartService: CartService,
   ) {
     this.productService.getProduct().subscribe(() => {
       this.favoriteService.getFavorite().subscribe(data =>{
@@ -42,6 +43,9 @@ export class FavoriteComponent implements OnInit {
 
   addToCart(product: productModel){
     this.cartService.addToCart(product)
+  }
+  removeFavourite(product: productModel){
+    this.favoriteService.removeFavorite(product.id)
   }
 
 }

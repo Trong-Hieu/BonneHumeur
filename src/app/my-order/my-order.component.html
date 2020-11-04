@@ -1,1 +1,27 @@
-<p>my-order works!</p>
+
+<div class="container">
+  <h1>MY ORDERS</h1>
+  <table style="width: 100%;" class="table">
+    <thead>
+      <th>Id</th>
+      <th>Order Date</th>
+      <th>Product</th>
+      <th>Total Price</th>
+      <th>Status</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of myOrder">
+        <td style="color: rgb(0, 140, 255);">{{ order.id }}</td>
+        <td>{{ order.orderDate }}</td>
+        <td>
+          <p *ngFor="let item of order.items">{{ item.product.name }}</p>
+        </td>
+        <td>
+          <p *ngFor="let item of order.items">{{ item.totalPrice | currency }}</p>
+        </td>
+        <td>{{ order.status }}</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>

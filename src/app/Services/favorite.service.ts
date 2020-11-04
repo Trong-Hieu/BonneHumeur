@@ -47,8 +47,5 @@ export class FavoriteService {
     })
   }
 
-  private getOrCreateFavoriteID(){
-    let favoriteID = localStorage.getItem("favoriteID")
-  }
 
 }

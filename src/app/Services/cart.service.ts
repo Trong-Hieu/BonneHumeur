@@ -52,7 +52,7 @@ export class CartService {
    getCart(){
     return this.firestore.collection("shopping-carts").doc(this.cartId)
       .collection("items").snapshotChanges()
-  }
+    }
     clearCart(){
       let cart = []
       this.firestore.collection("shopping-carts").doc(this.cartId)

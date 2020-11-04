@@ -1,1 +1,52 @@
-<p>admin-orders-manage works!</p>
+<div class="container">
+  <h1>ORDERS MANAGE</h1>
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" href="#home" (click)="changeStatus('unship')" aria-controls="home" role="tab" data-toggle="tab">UNSHIP</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#profile" (click)="changeStatus('shipped')" aria-controls="profile" role="tab" data-toggle="tab">SHIPPED</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#messages" (click)="changeStatus('canceled')" aria-controls="messages" role="tab" data-toggle="tab">CANCEL</a>
+    </li>
+
+  </ul>
+
+
+  <table class="table" style="width: 100%;">
+    <thead>
+      <th>Id</th>
+      <th>Email</th>
+      <th>Product</th>
+      <th>Action</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of filteredOrders">
+
+        <td style="color: rgb(0, 140, 255);">{{ order.id }}</td>
+        <td>
+          <p *ngFor="let information of order.information">{{ information.email }}</p>
+        </td>
+        <td>
+          <p *ngFor="let item of order.items">
+            <img src="{{ item.product.img }}" width="50px" height="auto">
+            {{ item.product.name }}
+            <b> x {{ item.quantity }} = {{ item.totalPrice | currency }}</b>
+          </p>
+        </td>
+        <td>
+          <button *ngIf="status==='unship'" class="btn btn-outline-primary" (click)="shipOrder(order.id)">
+            Ship</button>
+          <button *ngIf="status==='unship'" class="btn btn-outline-danger" (click)="cancelOrder(order.id)">
+            Cancel</button>
+        </td>
+
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+</div>
