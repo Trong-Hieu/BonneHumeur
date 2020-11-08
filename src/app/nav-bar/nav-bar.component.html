@@ -16,7 +16,7 @@
             <a class="nav-link" id="navbarDropdownNam"
               role="button" data-toggle="dropdown" aria-haspopup="true"
               aria-expanded="false">
-              NAM
+              MEN
             </a>
             <div class="dropdown-menu megamenu"
               aria-labelledby="navbarDropdownNam border-0 p-0 m-0">
@@ -27,7 +27,7 @@
                     <ul class="list-style">
                       <li class="dropdown-item" href="#">Accessories</li>
                       <li class="dropdown-item" [routerLink] = "['/products', 'men', 'bag']">Bags</li>
-                      <li class="dropdown-item" href="#">Coats</li>
+                      <li class="dropdown-item" [routerLink] = "['/products', 'men', 'coat']" href="#">Coats</li>
                     </ul>
 
                   </div>
@@ -38,8 +38,8 @@
                   <div class="col-megamenu">
                     <ul class="list-style">
                       <li class="dropdown-item" [routerLink] = "['/products', 'men', 'denim']">Denim</li>
-                      <li class="dropdown-item" href="#">Jackets</li>
-                      <li class="dropdown-item" href="#">Lether & Casual Jackets</li>
+                      <li class="dropdown-item" [routerLink] = "['/products', 'men', 'jacket']" href="#">Jackets</li>
+                      <li class="dropdown-item" [routerLink] = "['/products', 'men', 'leather & casual jacket']">Lether & Casual Jackets</li>
                     </ul>
 
                   </div>
@@ -79,7 +79,7 @@
           <a class="nav-link" routerLink = "/"
             id="navbarDropdownCart" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
-            NỮ
+            WOMEN
           </a>
 
           <div class="dropdown-menu megamenu"
@@ -126,8 +126,8 @@
                   <div class="col-megamenu">
                     <ul class="list-style">
                       <li class="dropdown-item" [routerLink] = "['/products', 'women', 'shoe']">Shoes</li>
-                      <li class="dropdown-item" href="#">Sweater</li>
-                      <li class="dropdown-item" href="#">Fragrances</li>
+                      <li class="dropdown-item" [routerLink] = "['/products', 'women', 'sweater & cardigan']">Sweater</li>
+                      <li class="dropdown-item" [routerLink] = "['/products', 'women', 'fragrance']">Fragrances</li>
                     </ul>
 
                   </div>
@@ -144,7 +144,7 @@
           <a class="nav-link" routerLink = "/"
             id="navbarDropdownCart" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
-            TRẺ EM
+            CHILD
           </a>
 
           <div class="dropdown-menu megamenu"
@@ -192,7 +192,7 @@
 
         <li class="nav-item dropdown has-megamenu">
           <a class="nav-link" routerLink = "/" id="navbarDropdownCart" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            NHÃN HIỆU
+            BRANDS
           </a>
 
           <div class="dropdown-menu megamenu"

@@ -101,7 +101,10 @@ export class ProductFormComponent implements OnInit {
       product.img = this.imgUrl
       console.log(product)
       this.productService.create(product)
-        .then(() => alert("Add Product success"))
+        .then(() =>{
+          alert("Add Product success")
+          window.location.reload()
+        })
     }
   }
 

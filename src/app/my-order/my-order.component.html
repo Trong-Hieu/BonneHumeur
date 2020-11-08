@@ -19,7 +19,11 @@
         <td>
           <p *ngFor="let item of order.items">{{ item.totalPrice | currency }}</p>
         </td>
-        <td>{{ order.status }}</td>
+        <td>
+          <span *ngIf="order.status === 'unship'" style="background-color: rgb(245, 56, 56);">{{ order.status }}</span>
+          <span *ngIf="order.status === 'shipped'" style="background-color: rgb(7, 250, 19);">{{ order.status }}</span>
+          <span *ngIf="order.status === 'canceled'" style="background-color: rgb(204, 248, 7);">{{ order.status }}</span>
+        </td>
       </tr>
 
     </tbody>
